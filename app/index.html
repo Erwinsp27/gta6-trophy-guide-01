@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Vice — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="A fan-made checklist and guide for all 55 PlayStation 5 trophies of Grand Theft Auto VI, with a platinum roadmap and progress tracking.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>NEON VICE</h1>
+    <p class="tagline">Grand Theft Auto VI — Trophy Guide &amp; Tracker · PlayStation 5 · 55 trophies</p>
+  </div>
+  <nav class="views" aria-label="Views">
+    <button type="button" id="nav-checklist" class="nav-btn active">Checklist</button>
+    <button type="button" id="nav-roadmap" class="nav-btn">Roadmap</button>
+    <button type="button" id="nav-sources" class="nav-btn">Sources</button>
+  </nav>
+</header>
+
+<main>
+  <section class="progress" aria-label="Progress">
+    <div class="progress-head">
+      <div>
+        <span class="big" id="earned-count">0 / 55</span>
+        <span class="muted">trophies earned</span>
+      </div>
+      <div class="grade-counts" id="grade-counts"></div>
+      <div class="pct" id="pct-label">0%</div>
+    </div>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar"><div class="fill" id="progress-fill"></div></div>
+    <p class="platinum-line" id="platinum-line">Platinum progress: 0 of 54 trophies toward Vice Got a Price!</p>
+    <p class="honesty">Fan-made guide. The trophy list is as reported from the released game by the press sources below; Rockstar, Sony and Microsoft have not published the list themselves.</p>
+  </section>
+
+  <section id="view-checklist" class="view">
+    <div class="toolbar">
+      <label class="field">Search
+        <input type="search" id="filter-search" placeholder="Search names and guides…" autocomplete="off">
+      </label>
+      <label class="field">Grade
+        <select id="filter-grade">
+          <option value="">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="field">Kind
+        <select id="filter-kind">
+          <option value="">All kinds</option>
+          <option value="story">Story</option>
+          <option value="side">Side missions</option>
+          <option value="activity">Activities</option>
+          <option value="collectible">Collectibles</option>
+          <option value="crime">Crime</option>
+          <option value="exploration">Exploration</option>
+          <option value="combat">Combat</option>
+          <option value="challenges">Challenges</option>
+          <option value="completion">Completion</option>
+          <option value="misc">Misc</option>
+          <option value="platinum">Platinum</option>
+        </select>
+      </label>
+      <label class="field">Earned
+        <select id="filter-earned">
+          <option value="">All</option>
+          <option value="earned">Earned</option>
+          <option value="unearned">Not yet earned</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="filter-missable"> Missable only</label>
+      <label class="check spoiler"><input type="checkbox" id="spoiler-toggle" checked> Hide story spoilers</label>
+    </div>
+    <p class="missable-banner" id="missable-banner">⚠ Only one trophy can be missed: <strong>Positive Mental Attitude</strong> — meditate on the Chapter 1 balcony after Down to Earth, before leaving Chapter 1.</p>
+    <p class="result-count" id="result-count"></p>
+    <ul class="trophy-list" id="trophy-list"></ul>
+    <p class="empty" id="empty-state" hidden>No trophies match these filters. Try clearing the search or a filter.</p>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2>Road to the Platinum</h2>
+    <p class="roadmap-meta">Difficulty <strong>4 / 10</strong> · About <strong>200 hours</strong> total · <strong>One playthrough</strong> · No difficulty settings · No mission replay — keep separate saves at the start and end of every chapter · Cheats disable trophies and saving</p>
+    <div class="missable-box">
+      <h3>⚠ The one missable trophy</h3>
+      <p><strong>Positive Mental Attitude</strong> — meditate at all 18 spots. In Chapter 1, after the mission Down to Earth, Lucia invites Jason to meditate on the balcony at his house in the morning. Do it before leaving Chapter 1. A meditation counts only after the final zen animation plays.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <h3>Step 1 — Story · 60–80 hours</h3>
+        <p>Play all five chapters and take optional missions as they appear. Scan vehicles and study animals as you travel, because that progress counts toward 100% later. Do the Chapter 1 balcony meditation when it is offered.</p>
+      </li>
+      <li>
+        <h3>Step 2 — 100% checklist · about 100 hours</h3>
+        <p>After the credits, work the checklist under Progress, then Stats, then 100% Completion. It is closer to 60% true completion. Only 70 of the 80 challenges are needed. You do need every robbery, underwater discovery, shooting range, drone race and Bret quest.</p>
+      </li>
+      <li>
+        <h3>Step 3 — Strangers &amp; cleanup · about 10 hours</h3>
+        <p>Finish the 8 Strangers &amp; Freaks strands and the side-character final missions, then sweep whatever is left — cards, WAiNK scans, stunts and the last few challenges.</p>
+      </li>
+    </ol>
+    <p class="footnote">Grades follow PowerPyx: 6 Silver including Maximum Withdrawal. Push Square counts Maximum Withdrawal as Bronze, giving 5 Silver and 47 Bronze.</p>
+  </section>
+
+  <section id="view-sources" class="view" hidden>
+    <h2>Sources</h2>
+    <p>This guide draws on the following outlets. The trophy list is as reported from the released game (19 November 2026) by the press below; Rockstar, Sony and Microsoft have not published the list themselves, and a few cryptic trophies still have unconfirmed methods, which this guide marks as unconfirmed rather than guessing.</p>
+    <ul class="sources-list">
+      <li><strong>PowerPyx</strong> — GTA 6 Trophy Guide &amp; Roadmap (powerpyx.com) — grades, roadmap, missable note, 100% details.</li>
+      <li><strong>Push Square</strong> — GTA 6 Trophy Guide &amp; Roadmap, published 18 Nov 2026 (pushsquare.com) — all 55 official descriptions, counts (397 stunts, 42 shooting challenges, 14 drone races, 18 card sets, 18 meditation spots, 8 garages with prices).</li>
+      <li><strong>GTA BOOM</strong> — GTA 6 Trophy and Achievement List for PS5 and Xbox Series X|S (gtaboom.com) — all 55 names, 28 hidden, 1,000 Gamerscore on Xbox.</li>
+      <li><strong>KeenGamer</strong> — GTA 6 Trophy Guide &amp; Platinum Roadmap (keengamer.com) — grades, roadmap, Chapter 1 meditation detail.</li>
+      <li><strong>Insider Gaming</strong> — grades (1 Platinum, 2 Gold, 6 Silver, 46 Bronze).</li>
+    </ul>
+    <p class="footnote">One name is printed exactly as the trophy trackers publish it, in censored form: “T**s Ass Drug Money”. The trackers censor the name; this guide does not guess the uncensored spelling.</p>
+  </section>
+
+  <section class="detail" id="detail" hidden>
+    <button type="button" class="close-btn" id="detail-close">✕ Close</button>
+    <div id="detail-body"></div>
+  </section>
+
+  <section class="tools" aria-label="Progress tools">
+    <h2>Your progress</h2>
+    <p>Progress is saved in this browser only (localStorage). Export a backup, import it on another device, or reset to start over.</p>
+    <div class="tool-row">
+      <button type="button" id="btn-export">Export progress (JSON)</button>
+      <label class="import-label">Import progress <input type="file" id="input-import" accept="application/json,.json"></label>
+      <button type="button" id="btn-reset" class="danger">Reset progress</button>
+    </div>
+    <p class="tool-status" id="tool-status" role="status"></p>
+  </section>
+</main>
+
+<footer>
+  <p>Neon Vice is an unofficial fan-made guide. Grand Theft Auto and GTA are trademarks of Rockstar Games / Take-Two Interactive. No official artwork or logos are used. All data is stored locally in your browser; nothing is sent anywhere.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
