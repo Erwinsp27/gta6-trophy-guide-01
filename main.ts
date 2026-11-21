@@ -1,21 +1,34 @@
-import { cpSync, mkdirSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
-import { buildDossier } from "./vendor/makefun-frontend.ts";
+// Neon Vice — GTA VI trophy guide and tracker: hand-in script.
+//
+// Copies the app/ and screenshots/ folders from this repository into the
+// hand-in directory, then writes the dossier.json for the entry there.
+//
+// The repository is located from this file's own path, so the script works
+// no matter which directory it is started from.
 
-const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
-const repoDir = process.cwd();
+import { cpSync, mkdirSync, writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { buildDossier } from './vendor/makefun-frontend.ts';
 
-mkdirSync(outDir, { recursive: true });
-cpSync(join(repoDir, "app"), join(outDir, "app"), { recursive: true });
-cpSync(join(repoDir, "screenshots"), join(outDir, "screenshots"), { recursive: true });
+const repoDir = dirname(fileURLToPath(import.meta.url));
+const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
-const dossier = buildDossier(outDir, {
+mkdirSync(outputDir, { recursive: true });
+
+cpSync(join(repoDir, 'app'), join(outputDir, 'app'), { recursive: true });
+cpSync(join(repoDir, 'screenshots'), join(outputDir, 'screenshots'), { recursive: true });
+
+const dossier = buildDossier(outputDir, {
   text_max_bytes: 163840,
   screenshots: { max: 4, max_bytes: 262144 },
   app_max_files: 993,
   app_max_bytes: 50331648,
   app_path_max_bytes: 1000,
 });
-writeFileSync(join(outDir, "dossier.json"), dossier);
-console.log(`Neon Vice dossier written to ${join(outDir, "dossier.json")}`);
-console.log("App copied to app/, screenshots copied to screenshots/, dossier.json written.");
+
+const dossierPath = join(outputDir, 'dossier.json');
+writeFileSync(dossierPath, dossier);
+
+console.log(`Wrote dossier to ${dossierPath}`);
+console.log(`Handed in app/ and screenshots/ from ${repoDir} to ${outputDir} and wrote dossier.json`);
